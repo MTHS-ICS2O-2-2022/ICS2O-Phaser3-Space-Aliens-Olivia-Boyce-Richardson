@@ -1,7 +1,7 @@
 /* global Phaser
-// Copyright (c) 2020 Mr. Coxall All rights reserved //
-// Created by: Mr. Coxall
-// Created on: Sep 2020
+// Copyright (c) 2023 Olivia BR All rights reserved //
+// Created by: Olivia BR
+// Created on: April 2023
 // This is the Phaser 3 game configuration file
 /**
 * Start Phaser Game.
