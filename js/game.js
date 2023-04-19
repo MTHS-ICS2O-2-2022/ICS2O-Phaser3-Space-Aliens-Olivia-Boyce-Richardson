@@ -1,4 +1,4 @@
-/* global Phaser
+/* global Phaser*/
 // Copyright (c) 2023 olivia br All rights reserved //
 // Created by: olivia br
 // Created on: april 2023
