@@ -1,22 +1,24 @@
-/* global Phaser*/
-// Copyright (c) 2023 olivia br All rights reserved //
-// Created by: olivia br
-// Created on: april 2023
+/* global Phaser */
+
+// Copyright (c) 2023 Olivia B-R All rights reserved //
+
+// Created by: Olivia B-R
+// Created on: April 2023
 // This is the Phaser 3 game configuration file
-/**
-* Start Phaser Game.
-*/
 
 // scene import statements
 import SplashScene from "./splashScene.js"
+import TitleScene from "./titleScene.js"
+
 // create the new scenes
 const splashScene = new SplashScene()
+const titleScene = new TitleScene()
 
 /** 
 * Start Phaser Game.
 */
-const config = {  
-  type: Phaser.AUTO,
+const config = { 
+  type: Phaser.AUTO, 
   width: 1920,
   height: 1080,
   physics: {
@@ -25,22 +27,22 @@ const config = {
       debug: true,
     },
   },
-
   // set background color
   backgroundColor: 0x5f6e7a,
   scale: {
-    mode: Phaser.Scale.FIT,
-    // we place it in the middle of the page
-    autoCenter: Phaser.Scale.CENTER_BOTH,
+    mode: Phaser. Scale.FIT,
+  // we place it in the middle of the page,
+    autoCenter: Phaser. Scale.CENTER_BOTH,
   },
 }
 
-const game = new Phaser.Game (config) 
+const game = new Phaser. Game (config) 
 //console.log(game)
 
 // load scenes
-// Note: remember any "key" is global and CAN NOT be reused!
-game.scene.add("splashScene", splashScene)
+// Note: remember any "key" is global and CAN NOT be reused! 
+game.scene.add("splashScene", splashScene) 
+game.scene.add("titleScene", titleScene)
 
 // the start scene
 game.scene.start("splashScene")
