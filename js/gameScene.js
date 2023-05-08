@@ -38,7 +38,7 @@ class GameScene extends Phaser.Scene {
     console.log("Game Scene")
 
     this.load.image("starBackground", "./assets/starBackground.png") 
-    this.load.image("ship", "./assets/spaceship.png")
+    this.load.image("ship", "./assets/spaceShip.png")
   }
 
   /**
@@ -49,8 +49,9 @@ class GameScene extends Phaser.Scene {
   create(data) {
     this.background = 
     this.add.image(0, 0, "starBackground").setScale(2.0)
-  
     this.background.setOrigin(0, 0)
+
+    this.ship = this.physics.add.sprite(1920 / 2, 1080 - 100, "ship")
   }
 
   /**
@@ -59,22 +60,24 @@ class GameScene extends Phaser.Scene {
    * @param {number} time - The current time.
    * @param {number} delta - The delta time in ms since the last frame.
    */
-update(time, delta) {
-  const keyLeftObj = this.input.keyboard.addKey("LEFT") 
-  const keyRightObj = this.input.keyboard.addKey("RIGHT")
+  update(time, delta) {
+    const keyLeftObj = this.input.keyboard.addKey("LEFT") 
+    const keyRightObj = this.input.keyboard.addKey("RIGHT")
 
-  if (keyLeftObj.isDown === true) {
-    this.ship.x -= 15
-    if (this.ship.x < 0) {
-      this.ship.x = 0
+    if (keyLeftObj.isDown === true) {
+      this.ship.x -= 15
+      if (this.ship.x < 0) {
+        this.ship.x = 0
+      }
     }
-  }
 
-  if (keyRightObj.isDown === true) { 
-    this.ship.x += 15
-    if (this.ship.x > 1920) { 
-    this.ship.x = 1920
+    if (keyRightObj.isDown === true) { 
+      this.ship.x += 15
+      if (this.ship.x > 1920) { 
+      this.ship.x = 1920
+      }
     }
   }
 }
-}
+
+export default GameScene
