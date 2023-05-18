@@ -15,7 +15,7 @@ class GameScene extends Phaser.Scene {
     const alienXlocation = Math.floor(Math.random() * 1920) + 1
     let alienXVelocity = Math.floor(Math.random() * 50) + 1
     alienXVelocity *= Math.round(Math.random()) ? 1 : -1
-    const anAlien = this.physics.add.sprite(alienXlocation, 100, 'alien')
+    const anAlien = this.physics.add.sprite(alienXlocation, -100, 'alien')
     anAlien.body.velocity.y = 200
     anAlien.body.velocity.x = alienXVelocity
     this.alienGroup.add(anAlien)
@@ -58,13 +58,13 @@ class GameScene extends Phaser.Scene {
 
     this.missileGroup = this.physics.add.group()
 
-    this.alienGroup = this.physics.add.group()
+    this.alienGroup = this.add.group()
     this.createAlien()
   }
 
   update(time, delta) {
     // Called 60 times a second, hopefully!
-
+    
     const keyLeftObj = this.input.keyboard.addKey("LEFT")
     const keyRightObj = this.input.keyboard.addKey("RIGHT")
     const keySpaceObj = this.input.keyboard.addKey("SPACE")
