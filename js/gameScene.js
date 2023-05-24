@@ -62,7 +62,7 @@ class GameScene extends Phaser.Scene {
     this.alienGroup = this.add.group()
     this.createAlien()
 
-    this.physics.add.collider(this.missileGroup, this.alienGroup, function (missile, alien) {
+    this.physics.add.collider(this.missileGroup, this.alienGroup, function (missileCollide, alienCollide) {
       alienCollide.destroy()
       missileCollide.destroy()
       this.sound.play("explosion")
